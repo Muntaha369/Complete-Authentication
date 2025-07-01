@@ -24,7 +24,7 @@ const SignIn = () => {
   })
   .then(function (response) {
     console.log(response);
-    router.push('/')
+    router.push('/home')
   })
   .catch(function (error) {
     console.log(error);

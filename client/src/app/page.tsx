@@ -1,11 +1,15 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
-const page = () => {
-  return (
-    <div className='w-scree h-screen flex justify-center items-center'>
-      <h1 className='text-9xl font-bold'>YEAH THAT'S IT</h1>
-    </div>
-  )
+const Page = () => {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push('/signin')
+  }, [router])
+
+  return null
 }
 
-export default page
+export default Page
