@@ -43,7 +43,7 @@ Follow these steps to run the project locally:
 
 ### 🔌 Backend Setup (Express)
 
-    1. Open a terminal and run:
+1. Open a terminal and run:
 
 ```bash
 cd server
