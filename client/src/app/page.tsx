@@ -1,10 +1,9 @@
 import React from 'react'
-import SignUp from './components/Signup'
 
 const page = () => {
   return (
-    <div>
-      hello
+    <div className='w-scree h-screen flex justify-center items-center'>
+      <h1 className='text-9xl font-bold'>YEAH THAT'S IT</h1>
     </div>
   )
 }
