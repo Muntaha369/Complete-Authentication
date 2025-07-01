@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ConnectDB = async()=>{
 
 try {
- await mongoose.connect('mongodb://127.0.0.1:27017/crud');
+ await mongoose.connect(`${process.env.DB_URI}`);
        console.log('Connected!');
 } catch (error) {
   console.error('Connection failed')

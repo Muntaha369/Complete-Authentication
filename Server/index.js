@@ -5,6 +5,9 @@ const ConnectDB = require('./Db')
 const User = require('./modle')
 const generatePassword = require('./genratepass')
 const cors = require('cors')
+require('dotenv').config();
+
+const PORT = process.env.PORT
 
 app.use(express.json())
 app.use(cors())
@@ -31,13 +34,13 @@ app.post('/api/request-otp', async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'muntahatherealone@gmail.com',
-      pass: 'njwwbzztwamidjgu'
+      user: `${process.env.SEDER_EMAIL}`,
+      pass: `${process.env.SENDER_PASS}`
     }
   });
 
   let mailOptions = {
-    from: 'muntahatherealone@gmail.com',
+    from: `${process.env.SEDER_EMAIL}`,
     to: email,
     subject: 'Your OTP Code',
     text: `Your OTP is: ${otp}`
@@ -93,4 +96,4 @@ app.post('/api/login', async(req,res)=>{
 })
 
 ConnectDB().then(
-()=> app.listen(8000,()=>{console.log(`Port working on 8000`)}));
+()=> app.listen(PORT,()=>{console.log(`Port working on ${PORT}`)}));
